@@ -1,0 +1,46 @@
+public class main
+{
+	public void drawTriangles () 
+	{
+		int row;
+		int column;
+		int space;
+		
+// a)
+		for ( row = 1; row <= 10; row++ )
+		{
+			for ( column = 1; column <= row; column++ )
+			System.out.print( "*" );
+			System.out.println();
+		}
+		System.out.println();
+		
+// b)
+		for ( row = 10; row >= 1; row-- )
+		{
+			for ( column = 1; column <= row; column++ )
+			System.out.print( "*" );
+			System.out.println();
+		}
+		System.out.println();
+		
+// c)
+		for ( row = 10; row >= 1; row-- )
+		{
+			for ( space = 10; space > row; space-- )
+			System.out.print( " " );
+			for ( column = 1; column <= row; column++ )
+			System.out.print( "*" );
+			System.out.println();
+		}
+		System.out.println();
+
+// d)
+		for ( row = 10; row >= 1; row-- ) 
+		{
+			for ( space = 1; space < row; space++ )
+			System.out.print( " " ); 
+			System.out.println();
+		}
+	} 
+}
