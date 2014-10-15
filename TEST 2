@@ -1,0 +1,125 @@
+//this is code for the choosing of the even or odd number
+
+import javax.swing.JOptionPane;
+import java.util.Scanner;
+
+public class random_number
+{
+	
+	public static void main(String[] args)
+	{
+		int wins = 0;
+		int losses = 0;
+		String try_again = "";
+		number rand = new number(0,4);
+		int x = rand.getnum();
+	
+		String user_input = JOptionPane.showInputDialog("Is my number 'even' or 'odd' ?"); 
+		
+		do
+		{
+			Scanner in = new Scanner(System.in);
+			
+			if (x >= 4)
+			{
+				System.out.print("I made a mistake. Try again.");
+				
+				System.out.println( "Do you want to test another number? ( Y / N )");
+			    try_again = in.next();
+			}
+			
+			else
+			{	
+				switch (x)
+				{				
+					case 0: 
+						if (user_input.equals("odd"))
+							System.out.print("You are correct! ");
+						else if (user_input.equals("even"))
+							System.out.print("Sorry, you were wrong. ");
+						if (user_input.equals("odd"))
+							wins++;
+						else if (user_input.equals("even"))
+							losses++;
+						System.out.println( "Do you want to test another number? ( Y / N )");
+					    try_again = in.next();
+						break;
+					
+				
+					case 1:				
+						if (user_input.equals("even"))
+							System.out.print("You are correct! ");
+						else if (user_input.equals("odd"))
+							System.out.print("Sorry, you were wrong. ");
+						if (user_input.equals("even"))
+							wins++;
+						else if (user_input.equals("odd"))
+							losses++;
+						System.out.println( "Do you want to test another number? ( Y / N )");
+					    try_again = in.next();
+						break;
+					
+					case 2:
+						if (user_input.equals("odd"))
+							System.out.print("You are correct! ");
+						else if (user_input.equals("even"))
+							System.out.print("Sorry, you were wrong. ");
+						if (user_input.equals("odd"))
+							wins++;
+						else if (user_input.equals("even"))
+							losses++;
+						System.out.println( "Do you want to test another number? ( Y / N )");
+					    try_again = in.next();
+						break;
+						
+					case 3:
+						if (user_input.equals("even"))
+							System.out.print("You are correct! ");
+						else if (user_input.equals("odd"))
+							System.out.print("Sorry, you were wrong. ");
+						if (user_input.equals("even"))
+							wins++;
+						else if (user_input.equals("odd"))
+							losses++;
+						System.out.println( "Do you want to test another number? ( Y / N )");
+					    try_again = in.next();
+						break;
+					
+					default:
+						break;
+											
+				}
+			}	
+			
+		}		
+		while ( try_again.equals("Y"));
+		
+		if (try_again.equals("N"))
+			System.out.printf("Wins: %d ", wins);
+			System.out.printf("Losses: %d", losses);
+	}
+}
+
+
+//this is code for the generation of the random number
+
+import java.util.Random;
+
+public class number
+{
+	private int lo, hi, x;
+	
+		public number(int i, int j)
+		{
+			lo = i;
+			hi = j;
+			Random rando = new Random();
+			x = rando.nextInt(hi - lo) + lo;			
+		}
+		
+		public int getnum()
+		{
+			return x;
+		}
+	
+}
