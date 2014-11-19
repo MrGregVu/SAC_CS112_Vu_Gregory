@@ -1,0 +1,30 @@
+package test3;
+
+import java.util.Random;
+
+//uses inheritance by extending from the class: one_dice_game
+public class two_dice_game extends one_dice_game
+{
+	public static int user_guess;
+	
+	//a constructor is used to initialize a user guess
+	public two_dice_game ( int input )
+	{
+		user_guess = input;
+	}
+	
+	//overrides the method that created the computer move. generates two moves instead of one
+	@Override
+	public int throw_dice()
+	{
+		int hi= 1;
+		int lo = 12;
+		int computer_move;
+		Random rand = new Random(); 
+		
+		computer_move = rand.nextInt ( ( hi - lo ) + 1 ) + lo;
+		System.out.printf ( "The computer threw two die equal to: %d\n", computer_move );
+		
+		return computer_move;
+	}
+}
