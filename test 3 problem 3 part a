@@ -1,0 +1,35 @@
+package test3;
+
+import java.util.Random;
+
+//uses inheritance by extending from the class: two_dice_game
+public class three_dice_game extends two_dice_game
+{
+	//uses a super constructor to initialize the user guess
+	public three_dice_game ( int num ) 
+	{
+		super ( user_guess );
+	}
+	
+	//overrides the initial throw_dice() to create three rolls and adds them together
+	@Override
+	public int throw_dice()
+	{
+		int hi= 1;
+		int lo = 6;
+		int computer_move;
+		int computer_move_two;
+		int computer_move_three;
+		Random rand = new Random(); 
+			
+		computer_move = rand.nextInt ( ( hi - lo ) + 1 ) + lo;
+		computer_move_two = rand.nextInt ( ( hi - lo ) + 1 ) + lo;
+		computer_move_three = rand.nextInt ( ( hi - lo ) + 1 ) + lo;
+			
+		System.out.printf ( "Computer threw three die equal to: %d\n", computer_move );
+			
+		computer_move = computer_move + computer_move_two + computer_move_three;
+			
+		return computer_move;
+	}
+}
