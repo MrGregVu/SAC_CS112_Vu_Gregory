@@ -1,0 +1,29 @@
+package test3;
+
+import java.util.Scanner;
+
+//there is only one object type
+public class dice_game 
+{
+	//this is static because it can be run without an instantiated object
+	public static void main ( String [] args ) 
+	{
+		String counter = "yes";
+		int turns = 0;
+		one_dice_game obj = new one_dice_game();
+		Scanner input = new Scanner ( System.in );
+		
+		while ( counter == "yes" )
+		{
+			turns++;
+			System.out.printf ( "Number of turns: %d\n", turns );
+			int user_guess = obj.prompt_user_turn();
+			int computer_turn = obj.throw_dice();
+			obj.compare_moves ( user_guess, computer_turn );
+			
+			//prompts user whether or not to play again, also outputs number of turns
+			System.out.println ( "Do you want to play again? Enter yes / no " );
+			counter = input.next();
+		}
+	}
+}
