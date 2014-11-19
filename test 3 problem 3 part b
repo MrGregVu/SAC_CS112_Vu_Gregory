@@ -1,0 +1,28 @@
+package test3;
+
+import java.util.Scanner;
+
+public class third_dice_game 
+{
+	//similar to second_dice_game, with the changed object type
+	public static void main ( String[] args ) 
+	{
+		String counter= "yes";
+		int turns = 0;
+		three_dice_game obj = new three_dice_game ( 6 );
+		Scanner input = new Scanner ( System.in );
+		
+		while ( counter == "yes" )
+		{
+			turns++;
+			System.out.printf ( "Number of turns: %d\n", turns ); 		
+
+			int user_guess = obj.prompt_user_turn();
+			int computer_guess = obj.throw_dice();
+			obj.compare_moves ( user_guess, computer_guess );
+			
+			System.out.println ( "Do you want to play again? Enter yes / no " );
+			counter = input.next();
+		}
+	}
+}
