@@ -1,0 +1,42 @@
+package test3;
+
+import java.util.Random;
+import java.util.Scanner;
+
+public class one_dice_game 
+{
+	//prompts the computer to throw the dice
+	public int throw_dice()
+	{
+		int hi = 1;
+		int lo = 6;
+		int computer_move;
+		Random rand = new Random(); 
+			
+		computer_move = rand.nextInt ( ( hi - lo ) + 1 ) + lo;
+		System.out.printf ( "The computer threw one dice equal to: %d\n", computer_move );
+			
+		return computer_move;
+	}
+	
+	//prompts the user to guess a value
+	public int prompt_user_turn()
+	{
+		int user_guess;
+		Scanner input = new Scanner ( System.in );
+	
+		System.out.println ( "Guess a value for one dice: \n" );
+		user_guess = input.nextInt();
+		System.out.printf ( "You guessed: %d\n", user_guess );
+		return user_guess;
+	}
+	
+	//compares the computer's throw to the user's guessed value
+	public void compare_moves ( int user_guess, int computer_move )
+	{
+		if ( user_guess == computer_move )
+			System.out.println ( "Your guess was correct!" );			
+		else if ( user_guess != computer_move )
+			System.out.println ( "Your guess was incorrect. Try again. " );
+	}
+}
