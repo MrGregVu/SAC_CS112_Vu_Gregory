@@ -1,0 +1,13 @@
+package final_exam;
+
+public class dice_class_test
+{
+	public static void main ( String[] args ) 
+	{
+		dice_class dice1 = new dice_class ( 2 );
+		
+		dice1.Throw();
+		
+		System.out.println ( dice1.toString() );
+	}
+}
