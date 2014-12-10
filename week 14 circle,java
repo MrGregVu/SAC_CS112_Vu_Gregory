@@ -1,0 +1,28 @@
+package java_SAC;
+
+public class circle extends two_dimensional_shape
+{
+	float radius;
+	static float PI = (float) 3.14159;
+	
+	circle ( float i_radius )
+	{
+		super ( "Circle" );
+		set_radius ( i_radius );
+	}
+	circle ( )
+	{
+		super ( "Circle" );
+		set_radius ( 0 );
+	}
+		
+	public void set_radius ( float i_radius ) { if ( i_radius < 0 ) radius = 0; else radius = i_radius; }
+	public float get_radius ( ) { return radius; }
+		
+	@Override public float area ( ) { return radius * radius * PI; }
+	@Override public String toString ( )
+	{
+		String circleStuff = String.format ( "Radius : %f\nArea : %f\n", get_radius(), area() );
+		return super.toString() + circleStuff;
+	}
+}
