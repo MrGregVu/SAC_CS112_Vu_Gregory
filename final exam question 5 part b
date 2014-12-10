@@ -1,0 +1,7 @@
+public class double_dice_class extends dice_class
+{
+  ...
+}
+
+//inheritance was shown her by extending the double dice class from the original dice class
+//where the methods were inherited, but also had to be overthrown
