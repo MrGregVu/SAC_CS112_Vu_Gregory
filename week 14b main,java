@@ -1,0 +1,8 @@
+public class main
+{
+	public static void main ( String [] args )
+	{
+		tester test = new tester ( );
+		test.week14hw();
+	}
+}
