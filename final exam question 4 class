@@ -1,0 +1,56 @@
+package final_exam;
+
+import java.util.*;
+
+public class double_dice_class implements Runnable  
+{
+	private int sum = 0;
+	private int numThrows = 1;
+	private int my_number;
+	Random rand = new Random();
+	
+	public double_dice_class ( int numDices ) 
+	{
+		numThrows = numDices;
+	}
+	
+	@Override
+	public void run ()
+	{
+		if ( numThrows == 1 )
+		{
+			int x = 0;
+			for ( my_number = 1; my_number <= 2; my_number++ )
+			{
+				x = rand.nextInt ( 6 - 1 ) + 1;
+				sum = sum + x;
+				System.out.println ( "Dice Number: " + my_number + "\nCurrent Value: " + sum );
+			}
+			System.out.println ( "\nTotal Dice Number: " + my_number + "\nCurrent Value: " + sum );
+		}
+		
+		else if ( numThrows == 2 )
+		{
+			int x = 0;
+			for(my_number = 1; my_number <= 4; my_number++)
+			{
+				x = rand.nextInt ( 6 - 1 ) + 1;
+				sum = sum + x;
+				System.out.println ( "Dice Number: " + my_number + "\nCurrent Value: " + sum );
+			}
+			System.out.println ( "\nTotal Dice Number: " + my_number + "\nCurrent Value: " + sum );
+		}
+		
+		else if ( numThrows == 3 )
+		{
+			int x = 0;
+			for ( my_number = 1; my_number <= 6; my_number++)
+			{
+				x = rand.nextInt ( 6 - 1 ) + 1;
+				sum = sum + x;
+				System.out.println ( "Dice Number: " + my_number + "\nCurrent Value: " + sum );
+			}
+			System.out.println ( "\nTotal Dice Number: " + my_number + "\nCurrent Value: " + sum );
+		}
+	}
+}
