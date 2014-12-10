@@ -1,0 +1,39 @@
+// commisionEmployee.java
+
+public class commision_employee extends employee
+{
+	// fields
+	private double grossSales;
+	private double commisionRate;
+	
+	commision_employee ( String i_firstName, String i_secondName
+			, String i_socialSecurityNumber, double i_grossSales, double i_commisionRate )
+	{
+		super ( i_firstName, i_secondName, i_socialSecurityNumber );
+		set_gross_sales ( i_grossSales );
+		set_commision_rate ( i_commisionRate );
+	}
+	
+	public void set_gross_sales ( double i_grossSales )
+	{
+		grossSales = i_grossSales; // should validate
+	}
+	public void set_commision_rate ( double i_commisionRate )
+	{
+		commisionRate = i_commisionRate; // should validate
+	}
+	public double get_commision_rate ( ) { return commisionRate; }
+	public double get_gross_sales ( ) { return grossSales; }
+	
+	@Override public String toString ( )
+	{
+		String commisionEmployeeStuff = String.format 
+				( "Commision Employee\nCommision Rate : %f\nGross Sales : %f\n"
+				, get_commision_rate(), get_gross_sales());
+		return super.toString() + commisionEmployeeStuff;
+	}
+	@Override public double get_payment_amount ( )
+	{
+		return get_gross_sales() * get_commision_rate();
+	}
+}
