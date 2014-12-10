@@ -1,0 +1,9 @@
+package java_SAC;
+
+public abstract class two_dimensional_shape extends shape
+{
+	two_dimensional_shape ( String i_typeOfShape )
+	{
+		super ( i_typeOfShape, 2 );
+	}
+}
