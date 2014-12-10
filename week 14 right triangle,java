@@ -1,0 +1,11 @@
+package java_SAC;
+
+public class right_triangle extends rectangle
+{
+	right_triangle ( float i_hight, float i_width )
+	{
+		super ( i_hight, i_width );
+		super.change_shape_type_name ( "Triangle");
+	}
+	@Override public float area ( ) { return (float) (.5 * super.area()); }	
+}
