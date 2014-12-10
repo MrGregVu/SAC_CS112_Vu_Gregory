@@ -1,0 +1,25 @@
+package java_SAC;
+
+public class sphere extends three_dimensional_shape
+{
+	float radius;
+	static float PI = (float) 3.14159;
+	
+	sphere ( float i_radius )
+	{
+		super ( "Sphere" );
+		set_radius ( i_radius );
+	}
+
+	public void set_radius ( float i_radius ) { if ( i_radius < 0 ) radius = 0; else radius = i_radius; }
+	public float get_radius ( ) { return radius; }
+	
+	@Override public float area ( ) { return 4 * PI * radius * radius; }
+	@Override public float volume ( ) { return ((float).75) * PI * radius * radius * radius; }
+	@Override public String toString ( ) 
+	{
+		String sphereStuff = String.format
+				( "Radius : %f\nSurfaceArea : %f\nVolume : %f\n", get_radius(), area(), volume() );
+		return super.toString() + sphereStuff;
+	}
+}
