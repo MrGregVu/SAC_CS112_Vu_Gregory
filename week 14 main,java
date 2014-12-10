@@ -1,0 +1,10 @@
+package java_SAC;
+
+public class main
+{
+	public static void  main ( String []args )
+	{
+		test_shape_heirarchy test = new test_shape_heirarchy ( );
+		test.tester ( );
+	}
+} 
