@@ -1,0 +1,13 @@
+package final_exam;
+
+public class double_dice_class_test
+{
+	public static void main ( String[] args ) 
+	{	
+		double_dice_class dice2 = new double_dice_class ( 3 );	
+		
+		dice2.Throw();
+		
+		System.out.println ( dice2.toString() );
+	}
+}
