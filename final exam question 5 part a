@@ -1,0 +1,11 @@
+private int numThrows = 1;
+
+public double_dice_class ( int numDices ) 
+	{
+		numThrows = numDices;
+	}
+	
+	//I used encapsulation here to retrieve the private integer "numThrows" using a public method. 
+	//The private integer numThrows was previously inaccessable to this class, and could not be used.
+	//By using encapsulation, I was able to get that private int and use it in this class
+	//the integer numThrows was then able to be used in calling the number of throws
